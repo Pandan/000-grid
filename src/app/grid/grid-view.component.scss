@@ -1,0 +1,13 @@
+@import "../../scss/_variables.scss";
+
+.grid{
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  flex-flow: wrap;
+
+  padding: 5px;
+  background-color: $bg-color;
+}
+
+

@@ -1,0 +1,19 @@
+@import "./scss/_variables.scss";
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0%;
+  box-sizing: border-box;
+  background-color: $bg-color;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+app-root{
+  width: 100%;
+  height: 100%;
+  background-color: $bg-color;
+}
+
