@@ -1,4 +1,4 @@
-export class GritItem {
+export class GridItem {
 
     public header:string;
     public subHeader:String;

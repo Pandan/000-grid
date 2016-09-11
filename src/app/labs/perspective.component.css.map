@@ -1,9 +1,0 @@
-{
-	"version": 3,
-	"file": "perspective.component.css",
-	"sources": [
-		"perspective.component.scss"
-	],
-	"mappings": "AAAA,AAAA,KAAK,CAAA;EACH,KAAK,EAAE,IAAK;EACZ,MAAM,EAAE,IAAK;EACb,OAAO,EAAE,IAAK;EACd,WAAW,EAAE,MAAO;EACpB,eAAe,EAAE,MAAO,GACzB;;AAED,AAAA,IAAI,CAAC;EACH,KAAK,EAAE,KAAM;EACb,MAAM,EAAE,KAAM;EACd,gBAAgB,EAAE,OAAQ,GAC3B",
-	"names": []
-}

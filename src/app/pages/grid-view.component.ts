@@ -3,7 +3,7 @@
  */
 import {Component} from "@angular/core";
 import {GridItemsService} from "./grid-items.service";
-import {GritItem} from "./grid-item";
+import {GridItem} from "./grid-item";
 import {Router} from "@angular/router";
 
 @Component({
@@ -17,7 +17,7 @@ import {Router} from "@angular/router";
 })
 
 export class GridViewComponent {
-  gridItems:GritItem [];
+  gridItems:GridItem [];
 
   constructor(gridItemsService:GridItemsService, private router:Router){
     this.gridItems = gridItemsService.getItems();

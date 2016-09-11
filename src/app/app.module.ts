@@ -4,22 +4,24 @@ import {FormsModule} from "@angular/forms";
 import {HttpModule} from "@angular/http";
 import {AppComponent} from "./app.component";
 import {routing} from "./app.routing";
-import {GridModule} from "./grid/grid.module";
-import {PageViewComponent} from "./views/page-view.component";
-import {PerspectiveComponent} from "./labs/perspective.component";
+import {PagesModule} from "./pages/pages.module";
+import {PerspectiveComponent} from "./labs/perspective/perspective.component";
+import {PageComponent} from "./pages/page.component";
+import {PerspectiveParallaxComponent} from "./labs/perspective-parallax/perspective.parallax.component";
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    PageViewComponent,
-    PerspectiveComponent
+    PageComponent,
+    PerspectiveComponent,
+    PerspectiveParallaxComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    GridModule,
+    PagesModule,
     routing
   ],
   bootstrap: [AppComponent]

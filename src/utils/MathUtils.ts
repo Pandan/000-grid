@@ -1,6 +1,9 @@
 /**
  * Created by pandan on 09/09/16.
  */
+
+/* Credits to Phaser, https://github.com/photonstorm/phaser/blob/v2.3.0/src/math/Math.js */
+
 export class MathUtils {
 
   static linearInterpolation(v:number[], k:number) : number {

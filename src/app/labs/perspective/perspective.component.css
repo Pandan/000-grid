@@ -1,0 +1,33 @@
+:host {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.box {
+  width: 600px;
+  height: 300px;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+  transform-origin: center center;
+  backface-visibility: visible;
+  background-color: #eeeeee;
+  border-style: solid;
+  border-width: 8px;
+  border-color: white;
+  padding: 40px; }
+  .box p {
+    font-family: "Helvetica Neue", Helvetica;
+    color: #363636; }
+  .box .header {
+    font-size: 1.2em;
+    font-weight: 800;
+    transform: translateZ(30px); }
+  .box .body {
+    font-size: 0.8em;
+    font-weight: 200;
+    line-height: 150%;
+    transform: translateZ(30px); }
+
+/*# sourceMappingURL=perspective.component.css.map */

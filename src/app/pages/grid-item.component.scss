@@ -5,7 +5,6 @@
   width: 230px;
   height: 290px;
   padding: 5px;
-
   background-color: $bg-color;
 }
 
@@ -16,9 +15,6 @@
   overflow: hidden;
   vertical-align: bottom;
 
-  border-radius: 5px;
-  background-color: #cccccc;
-
   cursor: pointer;
 
   .bottom-bg {
@@ -28,8 +24,9 @@
     bottom: 0;
     float: left;
 
-    opacity: .1;
-    background-color: #000000;
+    opacity: 0.2;
+
+    background-color: #ffffff;
   }
 
   .bottom-content {
@@ -48,10 +45,10 @@
 
     font-family: "Helvetica Neue", Helvetica;
     font-size: 1.2em;
-    font-weight: 400;
+    font-weight: 800;
     letter-spacing: 0px;
 
-    color: white;
+    color: $def-black-color;
   }
 
   .subHeader {
@@ -62,6 +59,6 @@
     font-weight: 200;
     letter-spacing: 0.2px;
 
-    color: white;
+    color: $def-black-color;
   }
 }

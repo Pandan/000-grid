@@ -6,8 +6,6 @@
   position: absolute;
   width: 100%;
   height: 60px;
-  background-color: #9b59b6;
-  border-radius: 0px 0px 5px 5px;
   opacity: 1;
   text-align: center; }
   .top-bar md-icon.arrow-button {
@@ -24,17 +22,17 @@
     font-size: 1.5em;
     font-weight: 500;
     letter-spacing: 1px;
-    color: white;
+    color: #363636;
     vertical-align: middle;
     margin: auto;
     line-height: 60px; }
   .top-bar .arrow-button {
     position: absolute;
-    color: black; }
+    color: #363636; }
 
 .content {
   width: 100%;
   height: 100%;
   background-color: white; }
 
-/*# sourceMappingURL=page-view.component.css.map */
+/*# sourceMappingURL=page.component.css.map */

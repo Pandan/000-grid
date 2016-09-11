@@ -3,8 +3,8 @@
  */
 import { ModuleWithProviders }  from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import {GridViewComponent} from "./grid/grid-view.component";
-import {PageViewComponent} from "./views/page-view.component";
+import {GridViewComponent} from "./pages/grid-view.component";
+import {PageComponent} from "./pages/page.component";
 
 const appRoutes: Routes = [
 
@@ -14,7 +14,7 @@ const appRoutes: Routes = [
   },
   {
     path: 'page/:id',
-    component: PageViewComponent
+    component: PageComponent
   }
 ];
 

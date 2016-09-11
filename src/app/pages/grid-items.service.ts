@@ -1,56 +1,57 @@
-import {GritItem} from "./grid-item";
+import {GridItem} from "./grid-item";
 export class GridItemsService {
 
-  getItems(): GritItem[] {
+  getItems(): GridItem[] {
 
     return [
-      new GritItem(
-        "",
-        "Lorem dim sum Egg custard tarts Popular shumai cha siu bao A creamy",
+      new GridItem(
+        "Perspective",
+        "Mouse interaction using perspective and rotate3d()",
         "#1abc9c",
         "perspective"
       ),
-      new GritItem(
-        "",
-        "Lorem dim sum Fung zao Ngao yuk kau Pai gwut Ma lai go",
-        "#3498db"
+      new GridItem(
+        "parallax",
+        "Parallax using background-position and translateZ()",
+        "#34495e",
+        "perspective-parallax"
       ),
-      new GritItem(
+      new GridItem(
         "",
         "Lorem dim sum honey glazed BBQ pork soy sauce chicken roast duck golden",
         "#9b59b6"
       ),
-      new GritItem(
+      new GridItem(
         "",
         "Lorem dim sum Pan friend pork dumpling Pot sticker water chestnut cake bitter",
-        "#34495e"
+        "#3498db"
       ),
-      new GritItem(
+      new GridItem(
         "",
         "Lorem dim sum vegetarian crisp spring rolls dried scallop and leek puff deep",
         "#f1c40f"
       ),
-      new GritItem(
+      new GridItem(
         "",
         "Lorem dim sum Fung zao Ngao yuk kau Pai gwut Ma lai go",
         "#e67e22"
       ),
-      new GritItem(
+      new GridItem(
         "",
         "Lorem dim sum coconut milk pudding black sesame soft ball deep fried bean",
         "#e74c3c"
       ),
-      new GritItem(
+      new GridItem(
         "",
         "Lorem dim sum Wu gok Cha siu bao Lo mai gai baked barbecue",
         "#bcc3c7"
       ),
-      new GritItem(
+      new GridItem(
         "",
         "Lorem dim sum Cha siu bao Lo mai gai baked barbecue pork bao",
         "#2ecc71"
       ),
-      new GritItem(
+      new GridItem(
         "",
         "Lorem dim sum steamed sponge cake tofu with syrup Jin deui Chicken feet",
         "#16a085"
@@ -59,19 +60,19 @@ export class GridItemsService {
 
     /*
     return [
-      new GritItem(
+      new GridItem(
         "#eca088"
       ),
-      new GritItem(
+      new GridItem(
         "#abcbd6"
       ),
-      new GritItem(
+      new GridItem(
         "#6b5470"
       ),
-      new GritItem(
+      new GridItem(
         "#efdba5"
       ),
-      new GritItem(
+      new GridItem(
         "#7bc1a1"
       )
     ]

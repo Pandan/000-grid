@@ -3,7 +3,7 @@
  */
 import {Component, ViewChild, Input} from "@angular/core";
 import "gsap";
-import {GritItem} from "./grid-item";
+import {GridItem} from "./grid-item";
 
 @Component({
   selector: 'grid-item',
@@ -12,9 +12,10 @@ import {GritItem} from "./grid-item";
       (mouseover)="onMouseOver($event)" 
       (mouseout)="onMouseOut($event)" 
       [style.backgroundColor]="itemData.colorA">
+      
       <div class="bottom-bg" #bottomBg></div>
       <div class="bottom-content">
-        <p class="header">{{index}} : Test</p>
+        <p class="header">{{index+1}}. {{itemData.header | lowercase}}</p>
         <p class="subHeader">{{itemData.subHeader}}</p>
       </div>
     </div>
@@ -27,7 +28,7 @@ export class GridItemComponent {
 
   @ViewChild('content') content;
   @ViewChild('bottomBg') bottomBg;
-  @Input('itemData') itemData: GritItem;
+  @Input('itemData') itemData: GridItem;
   @Input('index') index: number;
 
   ngOnInit() {
@@ -36,7 +37,6 @@ export class GridItemComponent {
 
   onMouseOver($event) {
     //console.log("onMouseOver " + $event);
-    //
     TweenMax.to(this.bottomBg.nativeElement, 0.3, {opacity:0.3, ease:Linear.easeNone});
   }
 
