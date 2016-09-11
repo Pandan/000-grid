@@ -67,8 +67,8 @@ export class PerspectiveParallaxComponent {
 
   ngOnDestroy(){
     TweenMax.killTweensOf(this);
-    cancelAnimationFrame(this.requestAnimationFrameId);
     this.isRunningAnim = false;
+    cancelAnimationFrame(this.requestAnimationFrameId);
   }
 
   onBoxMouseMove(event: MouseEvent) {

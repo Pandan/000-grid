@@ -1,0 +1,72 @@
+:host {
+  width: 100%;
+  height: 100%; }
+
+.container {
+  width: 100%;
+  height: 100%; }
+  .container section:last-child {
+    margin-bottom: 0; }
+  .container .parallax {
+    height: calc(100vh);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    text-align: center; }
+    .container .parallax h1 {
+      display: inline-block;
+      margin-top: 25vh;
+      font-family: "Helvetica Neue", Helvetica;
+      font-size: 8em;
+      font-weight: 800;
+      letter-spacing: 0px;
+      text-align: center;
+      color: #363636; }
+  .container #parallax-1 {
+    background-image: url("../../../assets/page-scroll/arrow-pointing-down.svg");
+    background-size: 24vh, 24vh;
+    background-position: top 63vh center;
+    background-color: #f1c40f; }
+  .container #parallax-1 {
+    background-image: url("../../../assets/page-scroll/arrow-pointing-down.svg");
+    background-size: 24vh, 24vh;
+    background-position: top 63vh center;
+    background-color: #e67e22; }
+  .container #parallax-2 {
+    background-image: url("../../../assets/page-scroll/arrow-pointing-down.svg");
+    background-size: 24vh, 24vh;
+    background-position: top 63vh center;
+    background-color: #f1c40f; }
+  .container section.module h2 {
+    display: inline-block;
+    margin-bottom: 20px;
+    font-family: "Helvetica Neue", Helvetica;
+    font-size: 3.5em;
+    font-weight: 800;
+    letter-spacing: 0px;
+    line-height: 0px;
+    color: #363636; }
+  .container section.module p {
+    margin-bottom: 40px;
+    max-width: 1000px;
+    font-family: "Helvetica Neue", Helvetica;
+    font-size: 1.5em;
+    font-weight: 400;
+    letter-spacing: 0px;
+    color: #363636; }
+  .container div.content {
+    padding: 30px 0px 70px 60px; }
+  .container section.module p:last-child {
+    margin-bottom: 0; }
+  .container section.module.content {
+    padding: 0px 0px 0px 0px;
+    background-color: black; }
+  .container div.content {
+    background-color: rgba(255, 255, 255, 0.15); }
+  .container section.module.content.section1 {
+    background-color: #f1c40f; }
+  .container section.module.content.section2 {
+    background-color: #e67e22; }
+
+/*# sourceMappingURL=page-scroll.component.css.map */

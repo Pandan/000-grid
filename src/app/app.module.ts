@@ -8,6 +8,7 @@ import {PagesModule} from "./pages/pages.module";
 import {PerspectiveComponent} from "./labs/perspective/perspective.component";
 import {PageComponent} from "./pages/page.component";
 import {PerspectiveParallaxComponent} from "./labs/perspective-parallax/perspective.parallax.component";
+import {PageScrollComponent} from "./labs/page-scroll/page-scroll.component";
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import {PerspectiveParallaxComponent} from "./labs/perspective-parallax/perspect
     AppComponent,
     PageComponent,
     PerspectiveComponent,
-    PerspectiveParallaxComponent
+    PerspectiveParallaxComponent,
+    PageScrollComponent
   ],
   imports: [
     BrowserModule,

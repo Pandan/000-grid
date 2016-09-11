@@ -23,9 +23,8 @@ import {GridItem} from "./grid-item";
     <span [ngSwitch]="id">
       <perspective *ngSwitchCase="'perspective'" [borderColor]="bgColor"></perspective>
       <perspective-parallax *ngSwitchCase="'perspective-parallax'" [borderColor]="bgColor">Meanie</perspective-parallax>
-      <span *ngSwitchCase="'Miney'">Miney</span>
-      <span *ngSwitchCase="'Moe'">Moe</span>
-      <span *ngSwitchDefault>other</span>
+      <page-scroll *ngSwitchCase="'page-scroll'" [borderColor]="bgColor">Meanie</page-scroll>
+      
     </span>
     
    

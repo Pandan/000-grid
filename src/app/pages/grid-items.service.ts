@@ -17,9 +17,10 @@ export class GridItemsService {
         "perspective-parallax"
       ),
       new GridItem(
-        "",
+        "page-scroll a.",
         "Lorem dim sum honey glazed BBQ pork soy sauce chicken roast duck golden",
-        "#9b59b6"
+        "#9b59b6",
+        "page-scroll"
       ),
       new GridItem(
         "",

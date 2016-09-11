@@ -6,7 +6,6 @@ import {CommonModule} from "@angular/common";
 import {GridViewComponent} from "./grid-view.component";
 import {GridItemComponent} from "./grid-item.component";
 import {GridItemsService} from "./grid-items.service";
-import {PageComponent} from "./page.component";
 
 
 @NgModule({
