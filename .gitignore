@@ -34,3 +34,7 @@ Thumbs.db
 
 #sass
 *.sass-cache*
+
+# Ignore CSS & Map File
+*.css
+*.map
