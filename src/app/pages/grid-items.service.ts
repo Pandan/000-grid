@@ -8,19 +8,22 @@ export class GridItemsService {
         "Perspective",
         "Mouse interaction using perspective and rotate3d()",
         "#1abc9c",
-        "perspective"
+        "perspective",
+        "https://github.com/Pandan/000-grid/tree/dev/src/app/labs/perspective"
       ),
       new GridItem(
         "parallax",
         "Parallax using background-position and translateZ()",
         "#34495e",
-        "perspective-parallax"
+        "perspective-parallax",
+        "https://github.com/Pandan/000-grid/tree/dev/src/app/labs/perspective-parallax"
       ),
       new GridItem(
         "page-scroll",
         "Exploring scroll functionality. Implementation of scrollStop and animations using interpolation.",
         "#9b59b6",
-        "page-scroll"
+        "page-scroll",
+        "https://github.com/Pandan/000-grid/tree/dev/src/app/labs/page-scroll"
       ),
       new GridItem(
         "",

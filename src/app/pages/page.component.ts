@@ -25,7 +25,7 @@ import "gsap";
           (click)="onClickArrow()">
         </md-icon>
         
-        <a [href]="githubUrl" target="_blank">
+        <a *ngIf="gridItem.gitUrl" [href]="gridItem.gitUrl" target="_blank">
           <md-icon class="github-button"  
             [style.color]="'363636'"
             svgSrc="./assets/github-logo.svg">
