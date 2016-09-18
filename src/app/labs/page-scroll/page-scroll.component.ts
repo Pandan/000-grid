@@ -34,13 +34,23 @@ export class PageScrollComponent {
   titles = ["sonder", "occhiolism", "liberosis", "kuebiko", "exulansis"];
 
   scrollTimeOutId: number;
+  scrollTimeOutDelay: number;
   animFrameId: number;
 
   isTweening: boolean = false;
   tween: TweenMax;
   tweenObj = {scrollYpos: 0}
 
+
+
   constructor() {
+    //Check if safari and adjusts the scrollTimeOutDelay.
+    var uagent = navigator.userAgent.toLowerCase();
+    if(/safari/.test(uagent) && !/chrome/.test(uagent)) {
+      this.scrollTimeOutDelay = 800;
+    }else{
+      this.scrollTimeOutDelay = 300;
+    }
   }
 
   onScrollStopped() {
@@ -69,7 +79,7 @@ export class PageScrollComponent {
     clearTimeout(this.scrollTimeOutId);
     this.scrollTimeOutId = setTimeout(() => {
       this.onScrollStopped();
-    }, 800);
+    }, this.scrollTimeOutDelay);
   }
 
   tweenScrollTo(value: number) {
