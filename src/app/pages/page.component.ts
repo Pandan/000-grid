@@ -2,12 +2,10 @@
  * Created by pandan on 06/09/16.
  */
 
-import {Component, ViewChild,ContentChild,ElementRef} from "@angular/core";
-import {MdIcon, MdIconRegistry} from "@angular2-material/icon";
+import {Component, ViewChild} from "@angular/core";
 import {Router, ActivatedRoute} from "@angular/router";
 import {GridItemsService} from "./grid-items.service";
 import {GridItem} from "./grid-item";
-
 import "gsap";
 
 @Component({
@@ -20,11 +18,20 @@ import "gsap";
       
       <div #topbar class="top-bar" 
         [style.backgroundColor]="bgColor">  
+        
         <md-icon class="arrow-button"  
           [style.color]="'363636'"
           svgSrc="./assets/arrow-right.svg"
           (click)="onClickArrow()">
-        </md-icon> 
+        </md-icon>
+        
+        <a [href]="githubUrl" target="_blank">
+          <md-icon class="github-button"  
+            [style.color]="'363636'"
+            svgSrc="./assets/github-logo.svg">
+          </md-icon>
+        </a>
+        
         <p class="header">{{gridItem.header | lowercase}}</p>
       </div>
       <br><br><br>
@@ -39,9 +46,7 @@ import "gsap";
     
    
   `,
-  styleUrls: ['page.component.scss'],
-  directives: [MdIcon],
-  providers: [MdIconRegistry]
+  styleUrls: ['page.component.scss']
 })
 
 export class PageComponent {
@@ -51,6 +56,7 @@ export class PageComponent {
   gridItem: GridItem;
   bgColor: string;
   id: string;
+  githubUrl = "https://www.google.se"
 
   constructor(private route: ActivatedRoute, private router: Router, private gridItemsService: GridItemsService) {
   }
@@ -68,6 +74,10 @@ export class PageComponent {
 
   onClickArrow() {
     this.router.navigate(['/']);
+  }
+
+  onClickGithub(){
+
   }
 
   onTopMouseOver($event){

@@ -19,13 +19,27 @@
     color: white;
   }
 
-  md-icon.arrow-button {
+  .arrow-button {
     position: absolute;
     left: 0px;
     width: 30px;
     height: 30px;
     margin-top: 14px;
     margin-left: 14px;
+    transform: scaleX(-1);
+
+    color: $def-black-color;
+
+    cursor: pointer;
+  }
+
+  .github-button{
+    position: absolute;
+    left: 0px;
+    width: 30px;
+    height: 30px;
+    margin-top: 14px;
+    margin-left: calc(100% - 50px);
     transform: scaleX(-1);
 
     color: $def-black-color;

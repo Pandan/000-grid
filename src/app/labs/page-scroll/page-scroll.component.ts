@@ -1,6 +1,5 @@
 import {Component, HostListener, Input} from "@angular/core";
 import "gsap";
-import {PageModule} from "./page-module.component";
 import {MathUtils} from "../../../utils/MathUtils";
 
 /**
@@ -12,7 +11,6 @@ import {MathUtils} from "../../../utils/MathUtils";
     <div class="container">
       <page-module (scrollStopped)="onScrollStopped()" *ngFor="let color of colors; let i = index" [title]="titles[i]" [color]="color" [index]="i" ></page-module>
     </div>`,
-  directives: [PageModule],
   styleUrls: ['page-scroll.component.scss']
 })
 
@@ -24,6 +22,7 @@ export class PageScrollComponent {
   onWindowMousewheel($event) {
     this.onMousewheel();
   }
+
   //DOMMouseScroll used for FireFox
   @HostListener('window:DOMMouseScroll', ['$event'])
   onDOMMouseScroll($event) {
@@ -39,14 +38,14 @@ export class PageScrollComponent {
 
   isTweening: boolean = false;
   tween: TweenMax;
-  tweenObj = {scrollYpos: 0}
+  tweenObj = {scrollYpos: 0};
 
   constructor() {
     //Check if safari and adjusts the scrollTimeOutDelay.
     var uagent = navigator.userAgent.toLowerCase();
-    if(/safari/.test(uagent) && !/chrome/.test(uagent)) {
+    if (/safari/.test(uagent) && !/chrome/.test(uagent)) {
       this.scrollTimeOutDelay = 800;
-    }else{
+    } else {
       this.scrollTimeOutDelay = 300;
     }
   }
@@ -59,8 +58,8 @@ export class PageScrollComponent {
     }
   }
 
-  onMousewheel(){
-    if(this.tween){
+  onMousewheel() {
+    if (this.tween) {
       this.tween.kill();
       this.tween = null;
     }
@@ -68,12 +67,12 @@ export class PageScrollComponent {
     this.animFrameId = requestAnimationFrame(() => this.nextFrame());
   }
 
-  nextFrame(){
+  nextFrame() {
     //If scrollTo tween is active kill it. User interaction should disable scrollTo tween.
 
     //Timeout to detect scrollStopped.
     clearTimeout(this.scrollTimeOutId);
-    this.scrollTimeOutId = setTimeout(() => {
+    this.scrollTimeOutId = window.setTimeout(() => {
       this.onScrollStopped();
     }, this.scrollTimeOutDelay);
   }
@@ -91,7 +90,7 @@ export class PageScrollComponent {
       onUpdate: () => this.onTweenUpdate(),
       onComplete: () => this.onTweenComplete(),
       ease: Cubic.easeInOut,
-      autoKill : false
+      autoKill: false
     });
   }
 

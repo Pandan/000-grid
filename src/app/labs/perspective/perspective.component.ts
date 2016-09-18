@@ -1,5 +1,5 @@
 import {Component, Input} from "@angular/core";
-import {DomSanitizationService} from "@angular/platform-browser";
+import {DomSanitizer} from "@angular/platform-browser";
 import "gsap";
 
 /**
@@ -27,9 +27,9 @@ export class PerspectiveComponent {
   @Input('borderColor') borderColor;
 
   boxTransform;
-  transform = {tx: 0, ty: 0, d: 0}
+  transform = {tx: 0, ty: 0, d: 0};
 
-  constructor(private sanitizer: DomSanitizationService) {
+  constructor(private sanitizer: DomSanitizer) {
   }
 
   onBoxMouseMove(event: MouseEvent) {

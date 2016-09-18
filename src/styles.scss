@@ -1,20 +1,16 @@
-@import "./scss/_variables.scss";
+/* You can add global styles to this file, and also import other style files */
 html, body {
   width: 100%;
   height: 100%;
   margin: 0%;
   box-sizing: border-box;
-  background-color: $bg-color;
-
-}
+  background-color: #eeeeee; }
 
 *, *:before, *:after {
-  box-sizing: border-box;
-}
+  box-sizing: border-box; }
 
-app-root{
+app-root {
   width: 100%;
   height: 100%;
-  background-color: $bg-color;
+  background-color: #eeeeee;
 }
-

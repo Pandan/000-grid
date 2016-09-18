@@ -6,20 +6,30 @@ import {CommonModule} from "@angular/common";
 import {GridViewComponent} from "./grid-view.component";
 import {GridItemComponent} from "./grid-item.component";
 import {GridItemsService} from "./grid-items.service";
+import {MdIcon, MdIconRegistry} from "@angular2-material/icon";
+import {PageComponent} from "./page.component";
+import {PerspectiveComponent} from "../labs/perspective/perspective.component";
+import {PerspectiveParallaxComponent} from "../labs/perspective-parallax/perspective.parallax.component";
+import {PageScrollModule} from "../labs/page-scroll/page-scroll.module";
 
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    PageScrollModule
   ],
   declarations: [
     GridViewComponent,
-    GridItemComponent
+    GridItemComponent,
+    PageComponent,
+    PerspectiveComponent,
+    PerspectiveParallaxComponent,
+    MdIcon
   ],
   exports: [
     GridViewComponent
   ],
-  providers: [GridItemsService]
+  providers: [GridItemsService, MdIconRegistry]
 })
 export class PagesModule {
 

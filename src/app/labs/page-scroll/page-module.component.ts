@@ -19,7 +19,7 @@ import {MathUtils} from "../../../utils/MathUtils";
   styleUrls: ['page-module.component.scss']
 })
 
-export class PageModule {
+export class PageModuleComponent {
 
   @Input('color') color;
   @Input('title') title;

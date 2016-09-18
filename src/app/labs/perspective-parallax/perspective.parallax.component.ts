@@ -1,5 +1,5 @@
 import {Component, ViewChild, ElementRef, Input} from "@angular/core";
-import {DomSanitizationService} from "@angular/platform-browser";
+import {DomSanitizer} from "@angular/platform-browser";
 import "gsap";
 
 /**
@@ -46,9 +46,9 @@ export class PerspectiveParallaxComponent {
   @Input('borderColor') borderColor;
 
   boxTransform:any;
-  transform = {tx:0,ty:0,d:0}
+  transform = {tx:0,ty:0,d:0};
 
-  assetsPrefix:string = "bg"
+  assetsPrefix:string = "bg";
 
   layerAXpos:number = 0;
   layerBXpos:number = 0;
@@ -58,7 +58,7 @@ export class PerspectiveParallaxComponent {
   isRunningAnim:boolean = true;
   requestAnimationFrameId: number;
 
-  constructor(private sanitizer: DomSanitizationService) {
+  constructor(private sanitizer: DomSanitizer) {
   }
 
   ngOnInit(){
@@ -112,7 +112,7 @@ export class PerspectiveParallaxComponent {
   resetBox(){
     TweenMax.to(this.transform, 0.4, {tx:0, ty:0, d:0, onUpdate:this.updateBoxTransform, onUpdateScope:this, ease:Back.easeOut})
   }
-s
+s;
   animationFrame() {
     this.layerAXpos -= 1;
     this.layerBXpos -= 0.7;

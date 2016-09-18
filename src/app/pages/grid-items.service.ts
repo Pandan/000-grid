@@ -57,7 +57,7 @@ export class GridItemsService {
         "Lorem dim sum steamed sponge cake tofu with syrup Jin deui Chicken feet",
         "#16a085"
       )
-    ]
+    ];
 
     /*
     return [

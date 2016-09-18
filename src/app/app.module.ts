@@ -13,11 +13,7 @@ import {PageScrollComponent} from "./labs/page-scroll/page-scroll.component";
 
 @NgModule({
   declarations: [
-    AppComponent,
-    PageComponent,
-    PerspectiveComponent,
-    PerspectiveParallaxComponent,
-    PageScrollComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 import { GridPage } from './app.po';
 
-describe('pages App', function() {
+describe('grid App', function() {
   let page: GridPage;
 
   beforeEach(() => {
