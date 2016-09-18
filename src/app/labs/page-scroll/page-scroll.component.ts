@@ -41,8 +41,6 @@ export class PageScrollComponent {
   tween: TweenMax;
   tweenObj = {scrollYpos: 0}
 
-
-
   constructor() {
     //Check if safari and adjusts the scrollTimeOutDelay.
     var uagent = navigator.userAgent.toLowerCase();
@@ -62,9 +60,9 @@ export class PageScrollComponent {
   }
 
   onMousewheel(){
-    console.log("onMousewheel");
-    if(this.isTweening){
+    if(this.tween){
       this.tween.kill();
+      this.tween = null;
     }
     //Using mousewheel event instead of scroll. This so we easier can disable scrollTo tween if user interacts.
     this.animFrameId = requestAnimationFrame(() => this.nextFrame());
@@ -72,9 +70,7 @@ export class PageScrollComponent {
 
   nextFrame(){
     //If scrollTo tween is active kill it. User interaction should disable scrollTo tween.
-    if(this.isTweening){
-      //this.tween.kill();
-    }
+
     //Timeout to detect scrollStopped.
     clearTimeout(this.scrollTimeOutId);
     this.scrollTimeOutId = setTimeout(() => {

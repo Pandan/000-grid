@@ -27,7 +27,7 @@ import "gsap";
         </md-icon> 
         <p class="header">{{gridItem.header | lowercase}}</p>
       </div>
-      <br><br>
+      <br><br><br>
       <!--<md-icon class="arrow-down-icon" svgSrc="../../assets/angle-arrow-down.svg"></md-icon> -->
     </div>
     <span [ngSwitch]="id">
@@ -63,7 +63,6 @@ export class PageComponent {
   }
 
   ngAfterViewInit() {
-
     this.hideTopBar(1);
   }
 
@@ -72,12 +71,10 @@ export class PageComponent {
   }
 
   onTopMouseOver($event){
-    console.log("onTopMouseOver");
     this.showTopBar();
   }
 
   onTopMouseOut($event){
-    console.log("onTopMouseOut");
     this.hideTopBar()
   }
 
