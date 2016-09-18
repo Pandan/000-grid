@@ -20,19 +20,19 @@ import "gsap";
           [style.borderColor]="borderColor">  
         </div>
         <div class="layer a" 
-          [style.background-image]="'url(../../assets/perspective-parallax/'+assetsPrefix+'-3.png)'"
+          [style.background-image]="'url(./assets/perspective-parallax/'+assetsPrefix+'-3.png)'"
           [style.background-position]="layerAXpos + 'px 0px'">
         </div>
         <div class="layer b" 
-          [style.background-image]="'url(../../assets/perspective-parallax/'+assetsPrefix+'-2.png)'"
+          [style.background-image]="'url(./assets/perspective-parallax/'+assetsPrefix+'-2.png)'"
           [style.background-position]="layerBXpos + 'px 0px'">
         </div>
         <div class="layer c" 
-          [style.background-image]="'url(../../assets/perspective-parallax/'+assetsPrefix+'-1.png)'"
+          [style.background-image]="'url(./assets/perspective-parallax/'+assetsPrefix+'-1.png)'"
           [style.background-position]="layerCXpos + 'px 0px'">
         </div>
         <div class="layer d" 
-          [style.background-image]="'url(../../assets/perspective-parallax/'+assetsPrefix+'-0.png)'"
+          [style.background-image]="'url(./assets/perspective-parallax/'+assetsPrefix+'-0.png)'"
           [style.background-position]="layerDXpos + 'px 0px'">
         </div>
         

@@ -6,7 +6,7 @@
 
 export class MathUtils {
 
-  static linearInterpolation(v:number[], k:number) : number {
+  static linearInterpolation(v: number[], k: number): number {
 
     var m = v.length - 1;
     var f = m * k;
@@ -28,8 +28,18 @@ export class MathUtils {
     return (p1 - p0) * t + p0;
   }
 
-  static percentage(value:number, max:number, min:number):number {
-    return ((value - min) / (max - min)) * 10
+  static percentage(value: number, max: number, min: number): number {
+    return ((value - min) / (max - min)) * 1
+  }
+
+  //The (absolute) difference between two values.
+  static difference(a, b) {
+    return Math.abs(a - b);
+  }
+
+  static within(a, b, tolerance) {
+    return (Math.abs(a - b) <= tolerance);
   }
 
 }
+
