@@ -40,6 +40,9 @@ export class PageScrollComponent {
   tween: TweenMax;
   tweenObj = {scrollYpos: 0};
 
+  prevYpos:number;
+  nextFrameDone:boolean;
+
   constructor() {
     //Check if safari and adjusts the scrollTimeOutDelay.
     var uagent = navigator.userAgent.toLowerCase();
@@ -48,6 +51,31 @@ export class PageScrollComponent {
     } else {
       this.scrollTimeOutDelay = 300;
     }
+    this.nextFrameDone = true;
+  }
+
+  onMousewheel() {
+    if (this.tween) {
+      this.tween.kill();
+      this.tween = null;
+    }
+    this.prevYpos = window.scrollY;
+    this.nextFrame();
+  }
+
+  nextFrame() {
+    if(this.nextFrameDone){
+      requestAnimationFrame(() => this.render());
+      this.nextFrameDone = false;
+    }
+  }
+
+  render(){
+    clearTimeout(this.scrollTimeOutId);
+    this.scrollTimeOutId = window.setTimeout(() => {
+      this.onScrollStopped();
+    }, this.scrollTimeOutDelay);
+    this.nextFrameDone = true;
   }
 
   onScrollStopped() {
@@ -56,25 +84,6 @@ export class PageScrollComponent {
     if (MathUtils.difference(moduleYPos, window.scrollY) < 300) {
       this.tweenScrollTo(moduleYPos);
     }
-  }
-
-  onMousewheel() {
-    if (this.tween) {
-      this.tween.kill();
-      this.tween = null;
-    }
-    //Using mousewheel event instead of scroll. This so we easier can disable scrollTo tween if user interacts.
-    this.animFrameId = requestAnimationFrame(() => this.nextFrame());
-  }
-
-  nextFrame() {
-    //If scrollTo tween is active kill it. User interaction should disable scrollTo tween.
-
-    //Timeout to detect scrollStopped.
-    clearTimeout(this.scrollTimeOutId);
-    this.scrollTimeOutId = window.setTimeout(() => {
-      this.onScrollStopped();
-    }, this.scrollTimeOutDelay);
   }
 
   tweenScrollTo(value: number) {
@@ -95,7 +104,6 @@ export class PageScrollComponent {
   }
 
   onTweenUpdate(): void {
-
     window.scrollTo(0, this.tweenObj.scrollYpos);
   }
 

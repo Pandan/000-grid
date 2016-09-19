@@ -37,9 +37,6 @@ export class PerspectiveComponent {
     this.calcPerspective(event.pageX, event.pageY);
   }
 
-  onBoxMouseOver(event: MouseEvent) {
-  }
-
   onBoxMouseOut(event: MouseEvent) {
     this.resetBox();
   }
@@ -81,6 +78,5 @@ export class PerspectiveComponent {
       ease: Back.easeOut
     })
   }
-
 }
 

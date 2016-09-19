@@ -20,7 +20,6 @@ import {MathUtils} from "../../../utils/MathUtils";
 })
 
 export class PageModuleComponent {
-
   @Input('color') color;
   @Input('title') title;
   @Input('index') index;
@@ -35,10 +34,9 @@ export class PageModuleComponent {
   elementRef: ElementRef;
   hideElement: boolean = false;
 
-  animFrameId: number;
+  nextFrameDone:boolean;
 
   yPos: number = 0;
-  prevYPos: number = 0;
 
   textScale: number = 1;
   imgRotation: number = 0;
@@ -58,30 +56,22 @@ export class PageModuleComponent {
   }
 
   nextFrame() {
-
-    //nextFrame() is called using requestAnimationFrame.
-    // It's checks if the component needs to render if not it stops rendering.
     this.yPos = this.elementRef.nativeElement.getBoundingClientRect().top;
-    if (this.yPos === this.prevYPos) {
-      cancelAnimationFrame(this.animFrameId);
-      return;
+    if(this.nextFrameDone){
+      requestAnimationFrame(() => this.render());
+      this.nextFrameDone = false;
     }
-    this.render();
-    this.animFrameId = requestAnimationFrame(() => this.nextFrame());
   }
 
   render() {
-
-    this.yPos = this.elementRef.nativeElement.getBoundingClientRect().top;
-    this.prevYPos = this.yPos;
-
     //Checks if component is outside the viewport and hides elements and stops rendering.
     if (!MathUtils.within(this.yPos, 0, window.innerHeight)) {
-      this.hideElement = true;
+      //this.hideElement = true;
+      this.nextFrameDone = true;
       return;
     }
-    this.hideElement = false;
-
+    //this.hideElement = false;
+    
     //Calculate percentage to be used by interpolation. Percentage, in/out (0-1)/(1-0)
     var percent: number = MathUtils.percentage(this.yPos, 0, window.innerHeight);
     if (percent > 1) percent = MathUtils.percentage(percent, 1, 2);
@@ -92,10 +82,7 @@ export class PageModuleComponent {
     this.imgScale = MathUtils.linearInterpolation([0, 1.5], percent);
     this.imgRotation = MathUtils.linearInterpolation([240, 0], percent);
 
-  }
-
-  ngOnDestroy() {
-    cancelAnimationFrame(this.animFrameId);
+    this.nextFrameDone = true;
   }
 }
 

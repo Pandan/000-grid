@@ -1,4 +1,4 @@
-import {Component, ViewChild, ElementRef, Input} from "@angular/core";
+import {Component, Input} from "@angular/core";
 import {DomSanitizer} from "@angular/platform-browser";
 import "gsap";
 
@@ -76,16 +76,11 @@ export class PerspectiveParallaxComponent {
     this.calcPerspective(event.pageX,event.pageY);
   }
 
-  onBoxMouseOver(event: MouseEvent) {
-  }
-
   onBoxMouseOut(event: MouseEvent) {
     this.resetBox();
   }
 
   onBoxMouseClick(event: MouseEvent){
-    console.log("onBoxMouseClick");
-
     this.assetsPrefix = (this.assetsPrefix == "bg") ? "bg2" : "bg";
   }
 
@@ -112,7 +107,7 @@ export class PerspectiveParallaxComponent {
   resetBox(){
     TweenMax.to(this.transform, 0.4, {tx:0, ty:0, d:0, onUpdate:this.updateBoxTransform, onUpdateScope:this, ease:Back.easeOut})
   }
-s;
+
   animationFrame() {
     this.layerAXpos -= 1;
     this.layerBXpos -= 0.7;

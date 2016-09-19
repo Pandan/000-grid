@@ -56,7 +56,6 @@ export class PageComponent {
   gridItem: GridItem;
   bgColor: string;
   id: string;
-  githubUrl = "https://www.google.se"
 
   constructor(private route: ActivatedRoute, private router: Router, private gridItemsService: GridItemsService) {
   }
@@ -74,10 +73,6 @@ export class PageComponent {
 
   onClickArrow() {
     this.router.navigate(['/']);
-  }
-
-  onClickGithub(){
-
   }
 
   onTopMouseOver($event){
