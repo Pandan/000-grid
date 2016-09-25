@@ -11,20 +11,22 @@ import {PageComponent} from "./page.component";
 import {PerspectiveComponent} from "../labs/perspective/perspective.component";
 import {PerspectiveParallaxComponent} from "../labs/perspective-parallax/perspective.parallax.component";
 import {PageScrollModule} from "../labs/page-scroll/page-scroll.module";
+import {PlanetariumModule} from "../labs/planetarium/planetarium.module";
 
 
 @NgModule({
   imports: [
     CommonModule,
-    PageScrollModule
+    PageScrollModule,
+    PlanetariumModule
   ],
   declarations: [
+    MdIcon,
     GridViewComponent,
     GridItemComponent,
     PageComponent,
     PerspectiveComponent,
-    PerspectiveParallaxComponent,
-    MdIcon
+    PerspectiveParallaxComponent
   ],
   exports: [
     GridViewComponent

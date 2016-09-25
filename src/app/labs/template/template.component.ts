@@ -1,6 +1,4 @@
-import {Component, ViewChild, ElementRef, Input} from "@angular/core";
-import {DomSanitizationService} from "@angular/platform-browser";
-import "gsap";
+import {Component, Input} from "@angular/core";
 
 /**
  * Created by pandan on 09/09/16.
@@ -19,17 +17,13 @@ import "gsap";
 
 export class TemplateComponent {
 
-  @Input('borderColor') borderColor;
-
   constructor() {
   }
 
   ngOnInit(){
-
   }
 
   ngOnDestroy(){
-
   }
 
   onBoxMouseMove(event: MouseEvent) {

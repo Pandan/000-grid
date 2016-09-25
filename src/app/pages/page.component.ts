@@ -41,10 +41,9 @@ import "gsap";
       <perspective *ngSwitchCase="'perspective'" [borderColor]="bgColor"></perspective>
       <perspective-parallax *ngSwitchCase="'perspective-parallax'" [borderColor]="bgColor">Meanie</perspective-parallax>
       <page-scroll *ngSwitchCase="'page-scroll'" [borderColor]="bgColor">Meanie</page-scroll>
+      <planetarium *ngSwitchCase="'planetarium'">Meanie</planetarium>
       
     </span>
-    
-   
   `,
   styleUrls: ['page.component.scss']
 })

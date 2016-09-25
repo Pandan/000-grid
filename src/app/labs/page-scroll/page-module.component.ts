@@ -71,7 +71,7 @@ export class PageModuleComponent {
       return;
     }
     //this.hideElement = false;
-    
+
     //Calculate percentage to be used by interpolation. Percentage, in/out (0-1)/(1-0)
     var percent: number = MathUtils.percentage(this.yPos, 0, window.innerHeight);
     if (percent > 1) percent = MathUtils.percentage(percent, 1, 2);

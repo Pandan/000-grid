@@ -28,7 +28,8 @@ export class GridItemsService {
       new GridItem(
         "",
         "Lorem dim sum Pan friend pork dumpling Pot sticker water chestnut cake bitter",
-        "#3498db"
+        "#3498db",
+        "planetarium"
       ),
       new GridItem(
         "",
@@ -61,26 +62,6 @@ export class GridItemsService {
         "#16a085"
       )
     ];
-
-    /*
-    return [
-      new GridItem(
-        "#eca088"
-      ),
-      new GridItem(
-        "#abcbd6"
-      ),
-      new GridItem(
-        "#6b5470"
-      ),
-      new GridItem(
-        "#efdba5"
-      ),
-      new GridItem(
-        "#7bc1a1"
-      )
-    ]
-    */
 
   }
 
