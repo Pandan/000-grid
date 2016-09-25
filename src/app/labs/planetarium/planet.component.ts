@@ -1,4 +1,4 @@
-import {Component, Input, HostBinding} from "@angular/core";
+import {Component, Input, HostBinding, ChangeDetectionStrategy, ViewChild} from "@angular/core";
 import {DomSanitizer} from "@angular/platform-browser";
 import {OrbitalObject} from "./orbital-object";
 import {MathUtils} from "../../../utils/MathUtils";
@@ -9,7 +9,7 @@ import {MathUtils} from "../../../utils/MathUtils";
 @Component({
   selector: 'planet',
   template: `
-     <planet class="moon" *ngFor="let planet of orbObj.children; let i = index" [index]="i" [planetData]="planet" [parentOrbObj]="orbObj" ></planet>
+     <planet class="moon" *ngFor="let planet of orbObj.children; let i = index" [index]="i" [planetData]="planet" [parentOrbObj]="orbObj" [timeFactor]="timeFactor"></planet>
   `,
   styleUrls: ['planet.component.scss']
 })
@@ -23,11 +23,12 @@ export class PlanetComponent {
   @HostBinding('style.background') background;
 
   @Input('index') index: number = 0;
-  @Input('orbObj') orbObj: OrbitalObject;
-  @Input('parentOrbObj') parentOrbObj: OrbitalObject;
+  @Input('planetData') orbObj: OrbitalObject;
+  @Input('parentOrbObj') parentOrbObj:OrbitalObject;
+  @Input('timeFactor') timeFactor:number;
 
   colorRGB: any;
-  isMoon: boolean = false;
+  isMoon:boolean = false;
 
   constructor(private sanitizer: DomSanitizer) {
   }
@@ -36,11 +37,12 @@ export class PlanetComponent {
   }
 
   ngAfterViewInit() {
-    if (this.parentOrbObj) {
+
+    if(this.parentOrbObj){
       this.isMoon = true;
-      this.orbObj.centerOfOrbit = {x: this.parentOrbObj.diameter * 0.5, y: this.parentOrbObj.diameter * 0.5};
+      this.orbObj.centerOfOrbit = {x:this.parentOrbObj.diameter*0.5,y:this.parentOrbObj.diameter*0.5};
       this.orbObj.distance = this.parentOrbObj.diameter * this.orbObj.distance;
-    } else {
+    }else{
       this.orbObj.centerOfOrbit = OrbitalObject.CENTER;
       this.orbObj.distance = OrbitalObject.DISTANCE * (this.index + 1);
     }
@@ -48,6 +50,7 @@ export class PlanetComponent {
     this.colorRGB = MathUtils.hexToRgb(this.orbObj.color);
     this.background = this.orbObj.color;
     this.styleWidth = this.styleHeight = Math.round(this.orbObj.diameter) + "px";
+
     this.nextFrame();
   }
 
@@ -60,20 +63,21 @@ export class PlanetComponent {
     this.nextFrame();
   }
 
-  updateOrbitalObject(obj: OrbitalObject) {
+  updateOrbitalObject(obj:OrbitalObject){
     obj.position = this.calcOrbitPoint(obj.centerOfOrbit, obj.angle, obj.distance);
-
     this.transform = this.sanitizer.bypassSecurityTrustStyle(
       'translate(' + (obj.position.x - (obj.diameter * 0.5)) + 'px, ' + (obj.position.y - (obj.diameter * 0.5)) + 'px)'
     );
-    if (!this.isMoon) {
-      var rotationDeg: number = MathUtils.angleBetween(obj.position.x, obj.position.y, this.orbObj.centerOfOrbit.x, this.orbObj.centerOfOrbit.y);
+
+    if(!this.isMoon){
+      var rotationDeg: number = MathUtils.angleBetween(obj.position.x, obj.position.y, obj.centerOfOrbit.x, obj.centerOfOrbit.y);
       rotationDeg = MathUtils.radToDeg(rotationDeg) + 90;
       this.backgroundImage = this.sanitizer.bypassSecurityTrustStyle(
         'linear-gradient(' + rotationDeg + 'deg, rgba(0, 0, 0, 0.2) 50%, ' + obj.color + ' 51%, ' + obj.color + ')'
       );
     }
-    obj.angle += obj.velocity;
+
+    obj.angle += (obj.velocity * this.timeFactor);
   }
 
 

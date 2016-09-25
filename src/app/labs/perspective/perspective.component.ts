@@ -10,7 +10,6 @@ import "gsap";
   template: `
     <div class="wrapper"
       (mousemove)="onBoxMouseMove($event)"
-      (mouseover)="onBoxMouseOver($event)"
       (mouseout)="onBoxMouseOut($event)">
       <div class="box" #box   
         [style.transform]="boxTransform"

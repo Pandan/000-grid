@@ -8,6 +8,7 @@
   justify-content: center;
 
   background: #22353b;
+
 }
 
 .wrapper {
@@ -16,13 +17,28 @@
   height: 300px;
   padding: 0px;
 
-  .sun {
-    position: fixed;
-    width: 30px;
-    height: 30px;
-    background: #ffd52c;
-    transform: translate(135px, 135px);
-    border-radius: 50%;
-    opacity: 1;
+  text-align: center;
+
+  cursor: pointer;
+
+  .header{
+    position: relative;
+    top: -160px;
+    font-family: "Helvetica Neue", Helvetica;
+    font-size: 2em;
+    color: white;
+  }
+  .solar-system {
+    position: absolute;
+    top: 30px;
+    .sun {
+      position: absolute;
+      width: 30px;
+      height: 30px;
+      background: #ffd52c;
+      transform: translate(135px, 135px);
+      border-radius: 50%;
+      opacity: 1;
+    }
   }
 }

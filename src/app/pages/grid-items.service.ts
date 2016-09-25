@@ -26,8 +26,8 @@ export class GridItemsService {
         "https://github.com/Pandan/000-grid/tree/dev/src/app/labs/page-scroll"
       ),
       new GridItem(
-        "",
-        "Lorem dim sum Pan friend pork dumpling Pot sticker water chestnut cake bitter",
+        "Planetarium",
+        "Always wanted to try doing The Solar System.",
         "#3498db",
         "planetarium"
       ),
