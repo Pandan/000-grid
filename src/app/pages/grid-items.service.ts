@@ -28,7 +28,7 @@ export class GridItemsService {
       new GridItem(
         "Planetarium",
         "Always wanted to try doing The Solar System.",
-        "#3498db",
+        "#bcc3c7",
         "planetarium"
       ),
       new GridItem(
@@ -49,7 +49,7 @@ export class GridItemsService {
       new GridItem(
         "",
         "Lorem dim sum Wu gok Cha siu bao Lo mai gai baked barbecue",
-        "#bcc3c7"
+        "#3498db"
       ),
       new GridItem(
         "",

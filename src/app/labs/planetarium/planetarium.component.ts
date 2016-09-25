@@ -22,7 +22,6 @@ import {MathUtils} from "../../../utils/MathUtils";
 export class PlanetariumComponent {
 
   planets: OrbitalObject[];
-
   wheelDeltaY: number = 0;
 
   _timeFactor: number = 1;
@@ -39,6 +38,11 @@ export class PlanetariumComponent {
     this.onMousewheel($event);
   }
 
+  @HostListener('window:DOMMouseScroll', ['$event'])
+  onDOMMouseScroll($event) {
+    this.onMousewheel($event);
+  }
+
   constructor(planetService: PlanetService) {
     this.planets = planetService.getPlanets();
   }
@@ -50,8 +54,10 @@ export class PlanetariumComponent {
   }
 
   onMousewheel($event: MouseWheelEvent) {
-    this.wheelDeltaY = $event.wheelDeltaY;
-    this.timeFactor = MathUtils.percentage(this.wheelDeltaY, -20, 0);
+    if ($event.wheelDeltaY) {
+      this.wheelDeltaY = $event.wheelDeltaY;
+      this.timeFactor = MathUtils.percentage(this.wheelDeltaY, -20, 0);
+    }
   }
 
   onMouseOver(event: MouseEvent) {
@@ -78,6 +84,5 @@ export class PlanetariumComponent {
 
   ngOnDestroy() {
   }
-
 }
 
