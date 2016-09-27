@@ -29,7 +29,8 @@ export class GridItemsService {
         "Planetarium",
         "Always wanted to try doing The Solar System.",
         "#bcc3c7",
-        "planetarium"
+        "planetarium",
+        "https://github.com/Pandan/000-grid/tree/dev/src/app/labs/planetarium"
       ),
       new GridItem(
         "",
